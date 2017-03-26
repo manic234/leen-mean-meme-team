@@ -4,14 +4,15 @@ function love.load()
 	gui      = require "lib.gui"
 	config   = require "lib.config"
 	physics  = require "lib.physics"
+	controls = require "lib.controls"
 	graphics = love.graphics
 	keyboard = love.keyboard
 	locale = config.load("locale")
 
 	wWidth,wHeight = love.window.getMode()
 
-	players = {physics.kinetic(0,0,16,16,nil,"player1")}
-	terrain = {physics.static(0,wHeight-20,wWidth,20,nil)}
+	players = {physics.kinetic(0,0,48,48,nil,"player1")}
+	terrain = {physics.static(0,wHeight-64,wWidth,64,nil)}
 end
 
 function love.update(dt)
